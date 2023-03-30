@@ -1,0 +1,17 @@
+{% extends "baseadmin.html.twig" %}
+{% block body %}
+    <h2>Modification</h2>
+    {{ form_start(formplaylist) }}
+    
+ 
+    {{ form_end(formplaylist) }}
+    <div class="col">
+    {% for formation in playlist.formations %}
+        <div class="col d-flex align-items-center">
+        {{ formation.title }}
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
+ 
+ 

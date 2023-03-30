@@ -1,0 +1,31 @@
+{% extends "baseadmin.html.twig" %}
+{% block body %}
+    <a href="{{ path('admincategories.ajout') }}" class="btn btn-primary">ajout</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="text-left align-top" scope="col">
+                    catégories
+                                           
+                </th>
+                <th class="text-center align-top" scope="col">
+                    &nbsp;
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+                             
+                    <td class="text-left">
+                        {% for categorie in categories %}
+                            {{ categorie.name }}<br />
+                            {% if categorie.formations|length == 0 %}
+                     <a href="{{ path('admincategories.suppr', {id:categorie.id}) }}" class="btn btn-danger">Supprimer</a>
+                     {% endif %}
+                        {% endfor %}
+                    
+                    
+                </tr>
+            
+        </tbody>
+    </table>
+{% endblock %}
